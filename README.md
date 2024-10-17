@@ -11,7 +11,7 @@ To jest prosty kalkulator stworzony w JavaScript, który obsługuje podstawowe o
    - Odejmowanie (`-`)
    - Mnożenie (`×`)
    - Dzielenie (`÷`)
-   - Potęgowanie (`x^y`)
+   - Potęgowanie (`$x^y$`)
 
 2. **Specjalne Funkcje**
    - Pierwiastek kwadratowy (`√x`)
