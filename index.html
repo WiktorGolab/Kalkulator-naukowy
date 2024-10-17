@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator naukowy - Wiktor Gołąb</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="favico.png">
+</head>
+<body>
+
+<!-- Tryb ciemny -->
+<div class="theme-switch">
+    <label>
+        Tryb ciemny
+        <input type="checkbox" id="themeToggle" onclick="toggleTheme()">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<!-- Social media -->
+<div class="social-links">
+    <a href="https://github.com/WiktorGolab" target="_blank" title="Github">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/wiktor-go%C5%82%C4%85b-166029262/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+
+<div>
+    <h1>Kalkulator naukowy</h1>
+</div>
+<div class="container-vertical">
+    <div class="container-horizontal">
+        <!-- Kalkulator -->
+        <div class="calculator">
+            <input type="text" id="display" value="0" disabled>
+
+            <div>
+                <button class="button number" onclick="appendNumber('7')">7</button>
+                <button class="button number" onclick="appendNumber('8')">8</button>
+                <button class="button number" onclick="appendNumber('9')">9</button>
+                <button class="button erase" onclick="clearDisplay()">C</button>
+                <button class="button erase" onclick="deleteLastCharacter()">←</button>
+            </div>
+
+            <div>
+                <button class="button number" onclick="appendNumber('4')">4</button>
+                <button class="button number" onclick="appendNumber('5')">5</button>
+                <button class="button number" onclick="appendNumber('6')">6</button>
+                <button class="button" onclick="appendOperator('*')">×</button>
+                <button class="button" onclick="appendOperator('/')">÷</button>
+            </div>
+
+            <div>
+                <button class="button number" onclick="appendNumber('1')">1</button>
+                <button class="button number" onclick="appendNumber('2')">2</button>
+                <button class="button number" onclick="appendNumber('3')">3</button>
+                <button class="button" onclick="appendOperator('+')">+</button>
+                <button class="button" onclick="appendOperator('-')">-</button>
+            </div>
+
+            <div>
+                <button class="button number" onclick="appendNumber('0')">0</button>
+                <button class="button number" onclick="appendNumber(',')">,</button>
+                <button class="button" onclick="appendPi()">π</button>
+                <button class="button" onclick="openParenthesis()">(</button>
+                <button class="button" onclick="closeParenthesis()">)</button>
+            </div>
+
+            <div>
+                <button class="button" onclick="appendOperator('^')">x<sup>y</sup></button>
+                <button class="button" onclick="sqrt()">√</button>
+                <button class="button" onclick="log()">log</button>
+                <button class="button" onclick="appendOperator('%')">%</button>
+                <button class="button" onclick="absolute()">|x|</button>
+            </div>
+
+            <div>
+                <button class="button" onclick="factorial()">n!</button>
+                <button class="button" onclick="sin()">sin</button>
+                <button class="button" onclick="cos()">cos</button>
+                <button class="button" onclick="tan()">tg</button>
+                <button class="button" onclick="ctg()">ctg</button>
+            </div>
+
+            <div>
+                <button class="button equals" onclick="calculate()">=</button>
+            </div>
+        </div>
+        <!-- Historia obliczeń -->
+        <div class="history-content">
+            <div class="history">
+                <h3>Historia obliczeń:</h3>
+                <p id="noHistoryMessage">Brak wprowadzonych obliczeń</p>
+                <ul id="historyList"></ul>
+                <i class="fas fa-trash-alt clearHistory" title="Usuń historię" style="cursor: pointer;"></i>
+            </div>
+            <button class="save-history" onclick="saveHistory()" title="Zapisz historię obliczeń do pliku tekstowego">
+                <i class="fas fa-file-alt"></i>
+            </button>
+        </div>
+
+    </div>
+    <!-- Informacje ogólne -->
+    <div class="instruction" id="instrukcja-obslugi">
+        <h1>Informacje ogólne</h1>
+    <!-- Punkt 1: Podstawowe Operacje -->
+    <div class="section" id="podstawowe-operacje">
+        <h2>1. Podstawowe Operacje</h2>
+        <p>Wprowadź cyfry i liczby klikając odpowiednie przyciski numeryczne (0-9).</p>
+        <p>Operacje matematyczne obsługiwane przez kalkulator:</p>
+        <ul>
+            <li><code>+</code> &#8594; Dodawanie</li>
+            <li><code>-</code> &#8594; Odejmowanie</li>
+            <li><code>×</code> &#8594; Mnożenie</li>
+            <li><code>÷</code> &#8594; Dzielenie</li>
+            <li><code>x<sup>y</sup></code> &#8594; Potęgowanie</li>
+        </ul>
+        <p>Używaj przecinka <code>,</code> do wprowadzania liczb dziesiętnych. Możesz wstawić tylko jeden przecinek na liczbę.</p>
+    </div>
+
+    <!-- Punkt 2: Specjalne Funkcje -->
+    <div class="section" id="specjalne-funkcje">
+        <h2>2. Specjalne Funkcje</h2>
+        <p>Aby wprowadzić liczbę pi (π), naciśnij przycisk <code>π</code>. Kalkulator automatycznie doda znak mnożenia, jeśli wprowadzasz ją jako część działania.</p>
+        <p>Obsługiwane funkcje matematyczne:</p>
+        <ul>
+            <li><code>√x</code> &#8594; Pierwiastek kwadratowy</li>
+            <li><code>sin</code> &#8594; Sinus kąta</li>
+            <li><code>cos</code> &#8594; Cosinus kąta</li>
+            <li><code>tg</code> &#8594; Tangens kąta</li>
+            <li><code>ctg</code> &#8594; Cotangens kąta</li>
+            <li><code>log</code> &#8594; Logarytm dziesiętny</li>
+            <li><code>n!</code> &#8594; Silnia</li>
+            <li><code>|x|</code> &#8594; Wartość bezwględna</li>
+        </ul>
+    </div>
+
+    <!-- Punkt 3: Działania na Nawiasach -->
+    <div class="section" id="dzialania-nawiasy">
+        <h2>3. Działania na Nawiasach</h2>
+        <p>Kalkulator pozwala na używanie nawiasów w celu określenia kolejności działań:</p>
+        <ul>
+            <li><code>(</code> &#8594; Otwiera nawias</li>
+            <li><code>)</code> &#8594; Zamyka nawias (tylko jeśli liczba otwartych nawiasów jest większa niż zamkniętych)</li>
+        </ul>
+    </div>
+
+    <!-- Punkt 4: Historia Obliczeń -->
+    <div class="section" id="historia-obliczen">
+        <h2>4. Historia Obliczeń</h2>
+        <p>Kalkulator zapisuje każde wykonane działanie w historii obliczeń. Możesz zapisać historię jako plik tekstowy klikając przycisk <strong>Zapisz historię</strong>.</p>
+        <p>W przypadku pustej historii, wyświetli się komunikat o braku danych do zapisania.</p>
+    </div>
+
+    <!-- Punkt 5: Tryb Ciemny -->
+    <div class="section" id="tryb-ciemny">
+        <h2>5. Tryb Ciemny</h2>
+        <p>Kalkulator posiada tryb ciemny, który można włączyć lub wyłączyć klikając przycisk <strong>Tryb Ciemny</strong>.</p>
+    </div>
+
+    <!-- Punkt 6: Resetowanie i Usuwanie -->
+    <div class="section" id="resetowanie-usuwanie">
+        <h2>6. Resetowanie i Usuwanie</h2>
+        <p>Użyj przycisku <strong>C</strong>, aby zresetować ekran kalkulatora do wartości <code>0</code>.</p>
+        <p>Aby usunąć ostatnio wprowadzone znaki, użyj przycisku usuwania (<code>←</code>), aż kalkulator wróci do wartości <code>0</code>.</p>
+    </div>
+
+    <!-- Punkt 7: Obliczanie Wyników -->
+    <div class="section" id="obliczanie-wynikow">
+        <h2>7. Obliczanie Wyników</h2>
+        <p>Po wprowadzeniu wyrażenia, naciśnij przycisk <strong>=</strong> aby obliczyć wynik. Kalkulator konwertuje wyrażenia na odpowiedni format i wyświetla wynik.</p>
+    </div>
+
+    <!-- Punkt 9: Obsługa Błędów -->
+    <div class="section" id="obsluga-bledow">
+        <h2>9. Obsługa Błędów</h2>
+        <p>W przypadku błędnych działań kalkulator wyświetli komunikat <code>ERROR</code> na ekranie.</p>
+    </div>
+</div>
+<div class="spacer"></div>
+Wiktor Gołąb 2024
+<div class="spacer"></div>
+<div class="spacer"></div>
+<script src="script.js"></script>
+</body>
+</html>
