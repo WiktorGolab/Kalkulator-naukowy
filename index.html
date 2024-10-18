@@ -37,43 +37,43 @@
     <div class="container-horizontal">
         <!-- Kalkulator -->
         <div class="calculator">
-            <input type="text" id="display" value="0" disabled>
+            <input type="text" id="display" value="0" enabled>
 
             <div>
                 <button class="button number" onclick="appendNumber('7')">7</button>
                 <button class="button number" onclick="appendNumber('8')">8</button>
                 <button class="button number" onclick="appendNumber('9')">9</button>
                 <button class="button erase" onclick="clearDisplay()">C</button>
-                <button class="button erase" onclick="deleteLastCharacter()">←</button>
+                <button class="button erase" onclick="deleteLastCharacter()">&#8592;</button>
             </div>
 
             <div>
                 <button class="button number" onclick="appendNumber('4')">4</button>
                 <button class="button number" onclick="appendNumber('5')">5</button>
                 <button class="button number" onclick="appendNumber('6')">6</button>
-                <button class="button" onclick="appendOperator('*')">×</button>
-                <button class="button" onclick="appendOperator('/')">÷</button>
+                <button class="button number" onclick="openParenthesis()">(</button>
+                <button class="button number" onclick="closeParenthesis()">)</button>
             </div>
 
             <div>
                 <button class="button number" onclick="appendNumber('1')">1</button>
                 <button class="button number" onclick="appendNumber('2')">2</button>
                 <button class="button number" onclick="appendNumber('3')">3</button>
-                <button class="button" onclick="appendOperator('+')">+</button>
-                <button class="button" onclick="appendOperator('-')">-</button>
+                <button class="button" onclick="appendOperator('*')">&#215;</button>
+                <button class="button" onclick="appendOperator('/')">&#247;</button>
             </div>
 
             <div>
                 <button class="button number" onclick="appendNumber('0')">0</button>
                 <button class="button number" onclick="appendNumber(',')">,</button>
-                <button class="button" onclick="appendPi()">π</button>
-                <button class="button" onclick="openParenthesis()">(</button>
-                <button class="button" onclick="closeParenthesis()">)</button>
+                <button class="button number" onclick="appendPi()">&#960;</button>
+                <button class="button" onclick="appendOperator('+')">+</button>
+                <button class="button" onclick="appendOperator('-')">-</button>
             </div>
 
             <div>
                 <button class="button" onclick="appendOperator('^')">x<sup>y</sup></button>
-                <button class="button" onclick="sqrt()">√</button>
+                <button class="button" onclick="sqrt()">&#8730;</button>
                 <button class="button" onclick="log()">log</button>
                 <button class="button" onclick="appendOperator('%')">%</button>
                 <button class="button" onclick="absolute()">|x|</button>
@@ -94,14 +94,14 @@
         <!-- Historia obliczeń -->
         <div class="history-content">
             <div class="history">
+                <button class="save-history" onclick="saveHistory()" title="Zapisz historię obliczeń do pliku tekstowego">
+                    <i class="fa-regular fa-file-lines"></i>
+                </button>
                 <h3>Historia obliczeń:</h3>
                 <p id="noHistoryMessage">Brak wprowadzonych obliczeń</p>
-                <ul id="historyList"></ul>
+                <ul id="historyList" title="Skopiuj"></ul>
                 <i class="fas fa-trash-alt clearHistory" title="Usuń historię" style="cursor: pointer;"></i>
             </div>
-            <button class="save-history" onclick="saveHistory()" title="Zapisz historię obliczeń do pliku tekstowego">
-                <i class="fas fa-file-alt"></i>
-            </button>
         </div>
 
     </div>
@@ -116,8 +116,8 @@
         <ul>
             <li><code>+</code> &#8594; Dodawanie</li>
             <li><code>-</code> &#8594; Odejmowanie</li>
-            <li><code>×</code> &#8594; Mnożenie</li>
-            <li><code>÷</code> &#8594; Dzielenie</li>
+            <li><code>&#215;</code> &#8594; Mnożenie</li>
+            <li><code>&#247;</code> &#8594; Dzielenie</li>
             <li><code>x<sup>y</sup></code> &#8594; Potęgowanie</li>
         </ul>
         <p>Używaj przecinka <code>,</code> do wprowadzania liczb dziesiętnych. Możesz wstawić tylko jeden przecinek na liczbę.</p>
@@ -126,10 +126,10 @@
     <!-- Punkt 2: Specjalne Funkcje -->
     <div class="section" id="specjalne-funkcje">
         <h2>2. Specjalne Funkcje</h2>
-        <p>Aby wprowadzić liczbę pi (π), naciśnij przycisk <code>π</code>. Kalkulator automatycznie doda znak mnożenia, jeśli wprowadzasz ją jako część działania.</p>
+        <p>Aby wprowadzić liczbę pi (&#960;), naciśnij przycisk <code>&#960;</code>. Kalkulator automatycznie doda znak mnożenia, jeśli wprowadzasz ją jako część działania.</p>
         <p>Obsługiwane funkcje matematyczne:</p>
         <ul>
-            <li><code>√x</code> &#8594; Pierwiastek kwadratowy</li>
+            <li><code>&#8730;x</code> &#8594; Pierwiastek kwadratowy</li>
             <li><code>sin</code> &#8594; Sinus kąta</li>
             <li><code>cos</code> &#8594; Cosinus kąta</li>
             <li><code>tg</code> &#8594; Tangens kąta</li>
@@ -180,6 +180,35 @@
     <div class="section" id="obsluga-bledow">
         <h2>9. Obsługa Błędów</h2>
         <p>W przypadku błędnych działań kalkulator wyświetli komunikat <code>ERROR</code> na ekranie.</p>
+    </div>
+</div>
+<!-- Zmiany -->
+<div class="updates">
+    <div class="section">
+        <h1 style="color: #4CAF50;">Aktualizacje<p class="version">v. 1.01</p></h1>
+        <h2>W tej wersji kalkulatora zostały wprowadzone następujące poprawki/naprawy:</h2>
+        <ul id="newUpdates">
+            <li>Liczne poprawki wizualne,</li>
+            <li>Możliwość wprowadzania obliczeń klawiaturą,</li>
+            <li>Możliwość skopiowania osobnej linijki obliczeń,</li>
+            <li>Wprowadzenie na stronę sekcji o aktualizacjach oraz błędach,</li>
+            <li>Wszystkie niestandardowe symbole są zaimplementowane za pomocą HTML Entity,</li>
+            <li>Możliwe jest przetwarzanie wyników obliczeń dla funkcji tj. <code>sin, cos, tg, ctg, log, &#8730;x</code>. Przykładowo, można od razu otrzymać wynik <code>ctg(40+5) = 1</code>,</li>
+            <li>Podczas gdy kalkulator wyświetla 0, po wprowadzaniu znaku <code>+</code> bądź <code>-</code>, zero zniknie</li>
+        </ul>
+    </div>
+</div>
+<div class="todo">
+    <div class="section">
+        <h1 style="color: #ff4747;">Znane błędy</h1>
+        <h2>W tej wersji kalkulatora zostały rozpoznane następujące bugi:</h2>
+        <ul id="todolist">
+            <li>Responsywność strony nie jest wprowadzona,</li>
+            <li>Wprowadzenie wartości bezwględnej przy pomocy klawiatury nie jest możliwe,</li>
+            <li>Wartość bezwględna nie działa przy wprowadzeniu dłuższych obliczeń,</li>
+            <li>Po wprowadzeniu <code>&#960;</code>, 0 nie znika,</li>
+            <li>Funkcja procentowa nie jest poprawnie zaimplementowana</li>
+        </ul>
     </div>
 </div>
 <div class="spacer"></div>
