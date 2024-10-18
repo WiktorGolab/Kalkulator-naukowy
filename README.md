@@ -1,8 +1,21 @@
-Pierwsza wersja kalkulatora. Występują błędy w obliczeniach.
+# v1.01
+W tej wersji kalkulatora zostały wprowadzone następujące poprawki/naprawy:
+- Liczne poprawki wizualne,
+- Możliwość wprowadzania obliczeń klawiaturą,
+- Możliwość skopiowania osobnej linijki obliczeń,
+- Wprowadzenie na stronę sekcji o aktualizacjach oraz błędach,
+- Wszystkie niestandardowe symbole są zaimplementowane za pomocą HTML Entity,
+- Możliwe jest przetwarzanie wyników obliczeń dla funkcji tj. `sin`, `cos`, `tg`, `ctg`, `log`, `√x`. Przykładowo, można od razu otrzymać wynik `ctg(40+5) = 1`,
+- Podczas gdy kalkulator wyświetla 0, po wprowadzaniu znaku `+` bądź `-`, zero zniknie
+
+W tej wersji kalkulatora zostały rozpoznane następujące bugi:
+- Responsywność strony nie jest wprowadzona,
+- Wprowadzenie wartości bezwględnej przy pomocy klawiatury nie jest możliwe,
+- Wartość bezwględna nie działa przy wprowadzeniu dłuższych obliczeń,
+- Po wprowadzeniu `π`, 0 nie znika,
+- Funkcja procentowa nie jest poprawnie zaimplementowana
 
 # Kalkulator JavaScript
-
-## Opis
 To jest prosty kalkulator stworzony w JavaScript, który obsługuje podstawowe operacje matematyczne, funkcje specjalne, a także tryb ciemny oraz historię obliczeń. Kalkulator jest przyjazny dla użytkownika i intuicyjny w obsłudze.
 
 ## Funkcje
