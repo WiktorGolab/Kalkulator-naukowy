@@ -1,12 +1,7 @@
-# v1.01
+# v1.02
 W tej wersji kalkulatora zostały wprowadzone następujące poprawki/naprawy:
-- Liczne poprawki wizualne,
-- Możliwość wprowadzania obliczeń klawiaturą,
-- Możliwość skopiowania osobnej linijki obliczeń,
-- Wprowadzenie na stronę sekcji o aktualizacjach oraz błędach,
-- Wszystkie niestandardowe symbole są zaimplementowane za pomocą HTML Entity,
-- Możliwe jest przetwarzanie wyników obliczeń dla funkcji tj. `sin`, `cos`, `tg`, `ctg`, `log`, `√x`. Przykładowo, można od razu otrzymać wynik `ctg(40+5) = 1`,
-- Podczas gdy kalkulator wyświetla 0, po wprowadzaniu znaku `+` bądź `-`, zero zniknie
+- Ulepszono strukturę katalogową projektu,
+- Mała zmiana w podpisie
 
 W tej wersji kalkulatora zostały rozpoznane następujące bugi:
 - Responsywność strony nie jest wprowadzona,
