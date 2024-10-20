@@ -1,0 +1,49 @@
+.wiktor {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    z-index: 21;
+    cursor: default;
+}
+
+.wiktortext {
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    z-index: 30;
+    bottom: 125%;
+    left: 50%;
+    border-radius: 10px;
+    margin-left: -150px;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.7s;
+}
+
+.wiktor:hover .wiktortext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.social-links {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    color: #000;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
