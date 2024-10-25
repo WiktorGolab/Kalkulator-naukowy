@@ -1,3 +1,6 @@
+# Kalkulator JavaScript
+To jest prosty kalkulator stworzony w JavaScript, który obsługuje podstawowe operacje matematyczne, funkcje specjalne, a także tryb ciemny oraz historię obliczeń. Kalkulator jest przyjazny dla użytkownika i intuicyjny w obsłudze.
+
 # v1.02
 W tej wersji kalkulatora zostały wprowadzone następujące poprawki/naprawy:
 - Ulepszono strukturę katalogową projektu,
@@ -9,9 +12,6 @@ W tej wersji kalkulatora zostały rozpoznane następujące bugi:
 - Wartość bezwględna nie działa przy wprowadzeniu dłuższych obliczeń,
 - Po wprowadzeniu `π`, 0 nie znika,
 - Funkcja procentowa nie jest poprawnie zaimplementowana
-
-# Kalkulator JavaScript
-To jest prosty kalkulator stworzony w JavaScript, który obsługuje podstawowe operacje matematyczne, funkcje specjalne, a także tryb ciemny oraz historię obliczeń. Kalkulator jest przyjazny dla użytkownika i intuicyjny w obsłudze.
 
 ## Funkcje
 1. **Podstawowe Operacje**
