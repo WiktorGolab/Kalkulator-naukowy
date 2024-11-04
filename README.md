@@ -1,6 +1,9 @@
 # Kalkulator JavaScript
 To jest prosty kalkulator stworzony w JavaScript, który obsługuje podstawowe operacje matematyczne, funkcje specjalne, a także tryb ciemny oraz historię obliczeń. Kalkulator jest przyjazny dla użytkownika i intuicyjny w obsłudze. Projekt nie jest w pełni skończony.
 
+![Interfejs kalkulatora. Tryb jasny.](assets/img/gallery/interface1.png)
+###### Interfejs kalkulatora. Rozdzielczość ekranu: 2560x1440
+
 ## Funkcje
 1. **Podstawowe Operacje**
    - Dodawanie (`+`)
@@ -27,6 +30,9 @@ To jest prosty kalkulator stworzony w JavaScript, który obsługuje podstawowe o
 
 5. **Tryb Ciemny**
    - Umożliwia włączenie lub wyłączenie trybu ciemnego.
+  
+   ![Interfejs kalkulatora. Tryb ciemny.](assets/img/gallery/interface2.png)
+   ###### Interfejs kalkulatora w trybie ciemnym. Rozdzielczość ekranu: 2560x1440
 
 6. **Resetowanie i Usuwanie**
    - Możliwość zresetowania kalkulatora oraz usunięcia ostatnich znaków.
