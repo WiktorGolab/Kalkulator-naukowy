@@ -32,7 +32,7 @@
 </div>
 
 <div>
-    <h1>Kalkulator naukowy</h1>
+    <p style="font-size: 5vh; line-height: 0.7; font-family: 'Courier New', Courier, monospace; text-align: center;">Kalkulator naukowy</p>
 </div>
 <div class="container-vertical">
     <div class="container-horizontal">
@@ -108,18 +108,18 @@
     </div>
     <!-- Informacje ogólne -->
     <div class="instruction" id="instrukcja-obslugi">
-        <h1>Informacje ogólne</h1>
+        <h1>Informacje ogólne &#128712;</h1>
     <!-- Punkt 1: Podstawowe Operacje -->
     <div class="section" id="podstawowe-operacje">
         <h2>1. Podstawowe Operacje</h2>
         <p>Wprowadź cyfry i liczby klikając odpowiednie przyciski numeryczne (0-9).</p>
         <p>Operacje matematyczne obsługiwane przez kalkulator:</p>
         <ul>
-            <li><code>+</code> &#8594; Dodawanie</li>
-            <li><code>-</code> &#8594; Odejmowanie</li>
-            <li><code>&#215;</code> &#8594; Mnożenie</li>
-            <li><code>&#247;</code> &#8594; Dzielenie</li>
-            <li><code>x<sup>y</sup></code> &#8594; Potęgowanie</li>
+            <li><code>+</code> &#8594; Dodawanie,</li>
+            <li><code>-</code> &#8594; Odejmowanie,</li>
+            <li><code>&#215;</code> &#8594; Mnożenie,</li>
+            <li><code>&#247;</code> &#8594; Dzielenie,</li>
+            <li><code>x<sup>y</sup></code> &#8594; Potęgowanie.</li>
         </ul>
         <p>Używaj przecinka <code>,</code> do wprowadzania liczb dziesiętnych. Możesz wstawić tylko jeden przecinek na liczbę.</p>
     </div>
@@ -130,14 +130,14 @@
         <p>Aby wprowadzić liczbę pi (&#960;), naciśnij przycisk <code>&#960;</code>. Kalkulator automatycznie doda znak mnożenia, jeśli wprowadzasz ją jako część działania.</p>
         <p>Obsługiwane funkcje matematyczne:</p>
         <ul>
-            <li><code>&#8730;x</code> &#8594; Pierwiastek kwadratowy</li>
-            <li><code>sin</code> &#8594; Sinus kąta</li>
-            <li><code>cos</code> &#8594; Cosinus kąta</li>
-            <li><code>tg</code> &#8594; Tangens kąta</li>
-            <li><code>ctg</code> &#8594; Cotangens kąta</li>
-            <li><code>log</code> &#8594; Logarytm dziesiętny</li>
-            <li><code>n!</code> &#8594; Silnia</li>
-            <li><code>|x|</code> &#8594; Wartość bezwględna</li>
+            <li><code>&#8730;x</code> &#8594; Pierwiastek kwadratowy,</li>
+            <li><code>sin</code> &#8594; Sinus kąta,</li>
+            <li><code>cos</code> &#8594; Cosinus kąta,</li>
+            <li><code>tg</code> &#8594; Tangens kąta,</li>
+            <li><code>ctg</code> &#8594; Cotangens kąta,</li>
+            <li><code>log</code> &#8594; Logarytm dziesiętny,</li>
+            <li><code>n!</code> &#8594; Silnia,</li>
+            <li><code>|x|</code> &#8594; Wartość bezwględna.</li>
         </ul>
     </div>
 
@@ -146,8 +146,8 @@
         <h2>3. Działania na Nawiasach</h2>
         <p>Kalkulator pozwala na używanie nawiasów w celu określenia kolejności działań:</p>
         <ul>
-            <li><code>(</code> &#8594; Otwiera nawias</li>
-            <li><code>)</code> &#8594; Zamyka nawias (tylko jeśli liczba otwartych nawiasów jest większa niż zamkniętych)</li>
+            <li><code>(</code> &#8594; Otwiera nawias,</li>
+            <li><code>)</code> &#8594; Zamyka nawias (Automatycznie zamyka nawiasy jeśli nie zostały one zamknięte).</li>
         </ul>
     </div>
 
@@ -186,17 +186,18 @@
 <!-- Zmiany -->
 <div class="updates">
     <div class="section">
-        <h1 style="color: #4CAF50;">Aktualizacje<p class="version">v. 1.02</p></h1>
+        <h1 style="color: #4CAF50;">Aktualizacje &#128505;<p class="version">v. 1.03</p></h1>
         <h2>W tej wersji kalkulatora zostały wprowadzone następujące poprawki/naprawy:</h2>
         <ul id="newUpdates">
-            <li>Ulepszono strukturę katalogową projektu,</li>
-            <li>Mała zmiana w podpisie</li>
+            <li>Posprzątano w kodzie (Podział plików na <code>script.js</code>, <code>history.js</code>, <code>mathFunctions.js</code> i <code>theme.js</code> dla lepszej organizacji kodu),</li>
+            <li>Małe poprawki stylistyczne,</li>
+            <li>Tryb ciemny od teraz działa w pełni poprawnie,</li>
         </ul>
     </div>
 </div>
 <div class="todo">
     <div class="section">
-        <h1 style="color: #ff4747;">Znane błędy</h1>
+        <h1 style="color: #ff4747;">Znane błędy &#78243;</h1>
         <h2>W tej wersji kalkulatora zostały rozpoznane następujące bugi:</h2>
         <ul id="todolist">
             <li>Responsywność strony nie jest wprowadzona,</li>
@@ -214,5 +215,8 @@
 <div class="spacer"></div>
 <div class="spacer"></div>
 <script src="scripts/script.js"></script>
+<script src="scripts/mathFunctions.js"></script>
+<script src="scripts/theme.js"></script>
+<script src="scripts/history.js"></script>
 </body>
 </html>
