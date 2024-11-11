@@ -16,6 +16,8 @@
 <div class="theme-switch">
     <label>
         Tryb ciemny
+    </label>
+    <label>
         <input type="checkbox" id="themeToggle" onclick="toggleTheme()">
         <span class="slider"></span>
     </label>
@@ -32,7 +34,7 @@
 </div>
 
 <div>
-    <p style="font-size: 5vh; line-height: 0.7; font-family: 'Courier New', Courier, monospace; text-align: center;">Kalkulator naukowy</p>
+    <p style="font-weight: 600; letter-spacing: -3px; font-size: 5vh; line-height: 0.9; font-family: 'Courier New', Courier, monospace; text-align: center; margin-top: 100px; margin-left: 20px; margin-right: 20px;">Kalkulator naukowy</p>
 </div>
 <div class="container-vertical">
     <div class="container-horizontal">
@@ -40,7 +42,7 @@
         <div class="calculator">
             <input type="text" id="display" value="0" enabled>
 
-            <div>
+            <div style="display: flex; justify-content: space-evenly;">
                 <button class="button number" onclick="appendNumber('7')">7</button>
                 <button class="button number" onclick="appendNumber('8')">8</button>
                 <button class="button number" onclick="appendNumber('9')">9</button>
@@ -48,7 +50,7 @@
                 <button class="button erase" onclick="deleteLastCharacter()">&#8592;</button>
             </div>
 
-            <div>
+            <div style="display: flex; justify-content: space-evenly;">
                 <button class="button number" onclick="appendNumber('4')">4</button>
                 <button class="button number" onclick="appendNumber('5')">5</button>
                 <button class="button number" onclick="appendNumber('6')">6</button>
@@ -56,7 +58,7 @@
                 <button class="button number" onclick="closeParenthesis()">)</button>
             </div>
 
-            <div>
+            <div style="display: flex; justify-content: space-evenly;">
                 <button class="button number" onclick="appendNumber('1')">1</button>
                 <button class="button number" onclick="appendNumber('2')">2</button>
                 <button class="button number" onclick="appendNumber('3')">3</button>
@@ -64,7 +66,7 @@
                 <button class="button" onclick="appendOperator('/')">&#247;</button>
             </div>
 
-            <div>
+            <div style="display: flex; justify-content: space-evenly;">
                 <button class="button number" onclick="appendNumber('0')">0</button>
                 <button class="button number" onclick="appendNumber(',')">,</button>
                 <button class="button number" onclick="appendPi()">&#960;</button>
@@ -72,7 +74,7 @@
                 <button class="button" onclick="appendOperator('-')">-</button>
             </div>
 
-            <div>
+            <div style="display: flex; justify-content: space-evenly;">
                 <button class="button" onclick="appendOperator('^')">x<sup>y</sup></button>
                 <button class="button" onclick="sqrt()">&#8730;</button>
                 <button class="button" onclick="log()">log</button>
@@ -80,7 +82,7 @@
                 <button class="button" onclick="absolute()">|x|</button>
             </div>
 
-            <div>
+            <div style="display: flex; justify-content: space-evenly;">
                 <button class="button" onclick="factorial()">n!</button>
                 <button class="button" onclick="sin()">sin</button>
                 <button class="button" onclick="cos()">cos</button>
@@ -104,11 +106,9 @@
                 <i class="fas fa-trash-alt clearHistory" title="Usuń historię" style="cursor: pointer;"></i>
             </div>
         </div>
-
-    </div>
-    <!-- Informacje ogólne -->
+        <!-- Informacje ogólne -->
     <div class="instruction" id="instrukcja-obslugi">
-        <h1>Informacje ogólne &#128712;</h1>
+        <p style="text-align: left; font-size: 1.8em; font-weight: 600;">Informacje ogólne ⓘ</p>
     <!-- Punkt 1: Podstawowe Operacje -->
     <div class="section" id="podstawowe-operacje">
         <h2>1. Podstawowe Operacje</h2>
@@ -186,12 +186,10 @@
 <!-- Zmiany -->
 <div class="updates">
     <div class="section">
-        <h1 style="color: #4CAF50;">Aktualizacje &#128505;<p class="version">v. 1.03</p></h1>
+        <h1 style="color: #4CAF50;">Aktualizacje &#10003;<p class="version">v. 1.04</p></h1>
         <h2>W tej wersji kalkulatora zostały wprowadzone następujące poprawki/naprawy:</h2>
         <ul id="newUpdates">
-            <li>Posprzątano w kodzie (Podział plików na <code>script.js</code>, <code>history.js</code>, <code>mathFunctions.js</code> i <code>theme.js</code> dla lepszej organizacji kodu),</li>
-            <li>Małe poprawki stylistyczne,</li>
-            <li>Tryb ciemny od teraz działa w pełni poprawnie,</li>
+            <li>Wprowadzono responsywność strony.</li>
         </ul>
     </div>
 </div>
@@ -200,7 +198,6 @@
         <h1 style="color: #ff4747;">Znane błędy &#78243;</h1>
         <h2>W tej wersji kalkulatora zostały rozpoznane następujące bugi:</h2>
         <ul id="todolist">
-            <li>Responsywność strony nie jest wprowadzona,</li>
             <li>Wprowadzenie wartości bezwględnej przy pomocy klawiatury nie jest możliwe,</li>
             <li>Wartość bezwględna nie działa przy wprowadzeniu dłuższych obliczeń,</li>
             <li>Po wprowadzeniu <code>&#960;</code>, 0 nie znika,</li>
@@ -208,6 +205,7 @@
         </ul>
     </div>
 </div>
+    </div>
 <div class="spacer"></div>
     <div class="wiktor retro glitch" data-text="Wiktor Gołąb 2024">Wiktor Gołąb 2024
         <div class="wiktortext retro">Made with passion and &lt;3!</div>
